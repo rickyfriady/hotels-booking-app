@@ -1,11 +1,10 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination } from 'swiper';
+import { Autoplay } from 'swiper';
 import { useRef, useCallback } from 'react';
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from 'react-icons/md';
 
 import 'swiper/css';
-import 'swiper/css/pagination';
 
 function HomeCard() {
   const sliderRef = useRef(null);
@@ -46,9 +45,6 @@ function HomeCard() {
           }
           spaceBetween={10}
           slidesPerView={1}
-          pagination={{
-            clickable: true,
-          }}
           breakpoints={{
             768: {
               slidesPerView: 2,
@@ -60,7 +56,7 @@ function HomeCard() {
             },
           }}
           centeredSlides
-          modules={[Autoplay, Pagination]}
+          modules={[Autoplay]}
         // onSlideChange={() => console.log('slide change')}
         // onSwiper={(swiper) => console.log(swiper)}
           className="container mx-auto"
@@ -71,10 +67,15 @@ function HomeCard() {
 
             </SwiperSlide>
           ))}
-          <div className="mt-5 w-[230px] container mx-auto relative -top-2">
-            <div className="flex justify-between items-center">
-              <MdKeyboardArrowLeft type="submit" className="rounded text-white font-bold w-6 h-6 cursor-pointer" onClick={handlePrev} />
-              <MdKeyboardArrowRight type="submit" className="rounded text-white font-bold w-6 h-6 cursor-pointer" onClick={handleNext} />
+          <div className="mt-5 w-[250px] container mx-auto relative -top-2">
+            <div className="flex justify-between items-center gap-4">
+              <button type="button" className="px-1 py-1 text-blue-400  leading-tight uppercase rounded-full  hover:bg-white hover:opacity-50 hover:shadow-lg  focus:outline-none focus:ring-0 active:bg-blue-400 active:shadow-lg transition duration-150 ease-in-out z-50" onClick={handlePrev}>
+                <MdKeyboardArrowLeft className="w-6 h-full" />
+              </button>
+              <span className="py-2 text-sm font-Inter text-blue-400 cursor-pointer hover:underline">See more promo</span>
+              <button type="button" className="px-1 py-1 text-blue-400  leading-tight uppercase rounded-full  hover:bg-white hover:opacity-50 hover:shadow-lg  focus:outline-none focus:ring-0 active:bg-blue-400 active:shadow-lg transition duration-150 ease-in-out z-50" onClick={handleNext}>
+                <MdKeyboardArrowRight className="w-6 h-full" />
+              </button>
             </div>
           </div>
         </Swiper>

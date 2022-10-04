@@ -11,8 +11,9 @@ module.exports = {
       colors: {
         navbarBg: '#fef6e4',
         homeBg: '#fffffe',
-        iconNav: '#c3f0ca',
-        heroSec: '#f3d2c1',
+        iconNav: '#eebbc3',
+        heroSec: '#232946',
+        textNav: '#232946',
       },
     },
   },

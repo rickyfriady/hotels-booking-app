@@ -50,7 +50,7 @@ function Navbar() {
           </div>
 
           <div className="items-center ml-2 gap-6 hidden sm:flex">
-            <button type="submit" className="px-3 py-1 bg-teal-400 rounded-md text-white hover:bg-teal-300"> Daftar </button>
+            <button type="submit" className="px-3 py-1 bg-iconNav/80 rounded-md text-textNav hover:bg-iconNav"> Daftar </button>
           </div>
           <div className="flex flex-col sm:hidden relative">
             <div>
