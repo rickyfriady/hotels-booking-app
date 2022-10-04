@@ -33,7 +33,7 @@ function HomeCard() {
   ];
 
   return (
-    <div className="px-4 py-10 overflow-hidden ">
+    <div className="mt-5 px-4 py-10 overflow-hidden ">
       <div className="flex justify-center items-center mt-2  relative">
         <Swiper
           ref={sliderRef}
