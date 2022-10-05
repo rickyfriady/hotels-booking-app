@@ -20,21 +20,24 @@ function HomeCard() {
   }, []);
 
   const imageData = [
-    { src: 'https://source.unsplash.com/472x230?cat' },
     { src: 'https://source.unsplash.com/472x230' },
-    { src: 'https://source.unsplash.com/472x230?dog' },
     { src: 'https://source.unsplash.com/472x230' },
-    { src: 'https://source.unsplash.com/472x230?animal' },
-    { src: 'https://source.unsplash.com/472x230?mouse' },
-    { src: 'https://source.unsplash.com/472x230?people' },
-    { src: 'https://source.unsplash.com/472x230?car' },
-    { src: 'https://source.unsplash.com/472x230?car' },
-    { src: 'https://source.unsplash.com/472x230?car' },
+    { src: 'https://source.unsplash.com/472x230' },
+    { src: 'https://source.unsplash.com/472x230' },
+    { src: 'https://source.unsplash.com/472x230' },
+    { src: 'https://source.unsplash.com/472x230' },
+    { src: 'https://source.unsplash.com/472x230' },
+    { src: 'https://source.unsplash.com/472x230' },
+    { src: 'https://source.unsplash.com/472x230' },
+    { src: 'https://source.unsplash.com/472x230' },
   ];
 
   return (
-    <div className="mt-5 px-4 py-10 overflow-hidden ">
-      <div className="flex justify-center items-center mt-2  relative">
+    <div className="mt-5 px-4 pt-10 overflow-hidden bg-heroSec">
+      <div className="w-full max-w-5xl mx-auto mb-3">
+        <h1 className="text-xl text-blue-400 font-Inter text-left capitalize">Our Promo this week</h1>
+      </div>
+      <div className="flex justify-center items-center mt-2 relative">
         <Swiper
           ref={sliderRef}
           autoplay={

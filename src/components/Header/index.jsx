@@ -20,11 +20,11 @@ const HeaderItems = [
 
 function Header() {
   return (
-    <div className="bg-white flex text-gray-500 justify-center relative">
+    <div className="bg-white pt-16 flex text-gray-500 justify-center relative">
       <div className="w-full mx-4 max-w-5xl mt-5 mb-24">
         <div className="flex gap-3 mb-12">
           {HeaderItems.map((items) => (
-            <div className="flex items-center gap-2 cursor-pointer py-2 px-4 rounded-full bg-heroSec text-white hover:bg-red-300 hover:text-heroSec ">
+            <div className="flex items-center gap-2 cursor-pointer py-2 px-4 rounded-full bg-heroSec text-white hover:bg-iconNav/80 hover:text-heroSec ">
               {items.icons}
               <span>{items.title}</span>
             </div>
