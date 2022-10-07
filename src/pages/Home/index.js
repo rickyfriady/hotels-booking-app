@@ -1,7 +1,9 @@
 /* eslint-disable react/jsx-props-no-spreading */
 
 // import { useQuery } from '@tanstack/react-query';
-import { Featured, Header, HomeCard } from '../../components';
+import {
+  Featured, FeaturedProperties, Footer, Header, HomeCard, MailList, PropertyList,
+} from '../../components';
 
 function Home() {
   // const fetchData = async () => {
@@ -19,7 +21,7 @@ function Home() {
   //   return <div>Error! cant result data</div>;
   // }
   return (
-    <div className="w-full h-full relative">
+    <div className="w-full h-full relative ">
       <Header />
       <HomeCard />
       {/* <div>
@@ -30,6 +32,11 @@ function Home() {
       <div className="flex mt-12 flex-col items-center gap-7">
         <Featured />
         <h1 className="w-full max-w-5xl text-4xl font-Inter text-left capitalize">Browse by property type</h1>
+        <PropertyList />
+        <h1 className="w-full max-w-5xl text-4xl font-Inter text-left capitalize">Homes guests love</h1>
+        <FeaturedProperties />
+        <MailList />
+        <Footer />
       </div>
     </div>
   );

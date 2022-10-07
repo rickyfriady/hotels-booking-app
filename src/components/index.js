@@ -1,9 +1,9 @@
 import Navbar from './Navbar';
 import Layout from './Layout';
 import Header from './Header';
-import Featured from './Featured';
+import Footer from './Footer';
 
 export {
-  Navbar, Layout, Header, Featured,
+  Navbar, Layout, Header, Footer,
 };
 export * from './molecule';
