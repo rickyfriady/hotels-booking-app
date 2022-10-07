@@ -18,7 +18,7 @@ const HeaderItems = [
   },
 ];
 
-function Header() {
+function Header({ tipe }) {
   return (
     <div className="bg-white pt-16 flex text-gray-500 justify-center relative">
       <div className="w-full mx-4 max-w-5xl mt-5 mb-24">
@@ -30,6 +30,8 @@ function Header() {
             </div>
           ))}
         </div>
+        {tipe !== 'list'
+        && (
         <div className="flex flex-col justify-start items-start">
           <h1 className="text-4xl lg:text-5xl font-bold text-left">A lifetime of discounts? its genius</h1>
           <p className="my-5 text-md text-left">
@@ -38,8 +40,10 @@ function Header() {
           </p>
           <button type="button" className=" px-3 py-3 bg-iconNav/80 text-textNav font-Inter text-sm leading-tight rounded shadow-md hover:bg-iconNav hover:shadow-lg transition duration-150 ease-in-out">Sign In or Register</button>
         </div>
+        )}
       </div>
-      <SearchNav />
+      {tipe !== 'list'
+      && <SearchNav />}
     </div>
   );
 }

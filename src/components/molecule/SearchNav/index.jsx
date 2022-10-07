@@ -10,6 +10,7 @@ import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; //
 
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function SearchNav() {
   const [destination, setDestination] = useState('');
@@ -33,6 +34,11 @@ function SearchNav() {
       ...prev,
       [name]: operation === 'i' ? options[name] + 1 : options[name] - 1,
     }));
+  };
+
+  const navigate = useNavigate();
+  const handleSearch = () => {
+    navigate('/hotels', { state: { destination, date, options } });
   };
 
   return (
@@ -154,7 +160,7 @@ function SearchNav() {
         </div>
         )}
       </div>
-      <button type="submit" className="px-12 py-1 bg-iconNav/80 rounded-md font-Inter text-md text-textNav hover:bg-iconNav"> Search </button>
+      <button type="submit" className="px-12 py-1 bg-iconNav/80 rounded-md font-Inter text-md text-textNav hover:bg-iconNav" onClick={handleSearch}> Search </button>
     </div>
   );
 }
