@@ -14,6 +14,7 @@ module.exports = {
         iconNav: '#eebbc3',
         heroSec: '#232946',
         textNav: '#232946',
+        yellowSec: '#F9BC60',
       },
     },
   },

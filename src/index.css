@@ -21,3 +21,12 @@ body {
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
+
+@layer components {
+    .header-containers {
+        @apply w-full mx-4 max-w-5xl mt-5 mb-24;
+    }
+    .header-listMode {
+        @apply w-full mx-4 max-w-5xl m-0 mt-12;
+    }
+}

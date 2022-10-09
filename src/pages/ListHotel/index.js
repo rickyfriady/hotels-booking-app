@@ -18,8 +18,8 @@ function ListHotel() {
       <Header tipe="list" />
       <div className="flex justify-center mt-5">
         <div className="w-full max-w-5xl flex gap-5">
-          <div className="flex-1 p-2 sticky top-2 h-max bg-iconNav">
-            <h1 className="text-lg mb-2">Search</h1>
+          <div className="flex-1 p-2 sticky top-20 h-max bg-iconNav">
+            <h1 className="text-xl mb-2">Search</h1>
             <div className="flex flex-col gap-2 mb-2">
               <label htmlFor="destination-input">
                 Destination
@@ -48,6 +48,8 @@ function ListHotel() {
           </div>
 
           <div className="flex-3">
+            <SearchItem />
+            <SearchItem />
             <SearchItem />
             <SearchItem />
             <SearchItem />
