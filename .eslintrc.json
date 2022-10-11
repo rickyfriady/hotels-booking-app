@@ -16,6 +16,8 @@
         "react/react-in-jsx-scope": "off",
         "react/jsx-filename-extension": "off",
         "import/no-unresolved": "off",
-        "react/prop-types": "off"
+        "react/prop-types": "off",
+        "import/extensions": "off",
+        "consistent-return": "off"
     }
 }
