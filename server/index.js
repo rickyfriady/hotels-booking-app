@@ -48,7 +48,7 @@ app.use('/api/room', roomRoute);
 app.use('/api/user', userRoute);
 // error handling middleware
 app.use((error, req, res, next) => {
-  const status = error.errorStatus || 500;
+  const status = error.status || 500;
   const message = error.message || 'something wrong in server side';
   const data = error.data || 'something wrong';
   res.status(status).json({
