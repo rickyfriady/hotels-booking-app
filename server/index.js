@@ -1,6 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
+import cookieParser from 'cookie-parser';
 
 // import { application } from 'express';
 import authRoute from './routes/auth.js';
@@ -27,7 +28,7 @@ mongoose.connection.on('connected', () => {
   console.log('MongoDb server connected');
 });
 
-app.get('/users', (req, res) => {
+app.get('/test', (req, res) => {
   res.send('first request');
 });
 
@@ -41,11 +42,12 @@ app.use((req, res, next) => {
 });
 
 // middleware
+app.use(cookieParser());
 app.use(express.json());
 app.use('/api/auth', authRoute);
 app.use('/api/hotel', hotelRoute);
 app.use('/api/room', roomRoute);
-app.use('/api/user', userRoute);
+app.use('/api/users', userRoute);
 // error handling middleware
 app.use((error, req, res, next) => {
   const status = error.status || 500;
