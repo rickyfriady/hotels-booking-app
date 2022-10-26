@@ -1,5 +1,6 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { useQuery } from '@tanstack/react-query';
-import { useFetchHotelCity } from '../../../hooks/useFetch';
+import { useFetch } from '../../../hooks/useFetch';
 
 function Featured() {
   const featuredHotels = [
@@ -17,24 +18,22 @@ function Featured() {
     },
   ];
 
-  const { data,error, isError, isLoading } = useQuery(['hotel'], useFetchHotelCity);
+  const url = "http://localhost:8800/api/hotel/countByCity?cities=jakarta,madrid,london";
+  const { data, isError, isLoading } = useQuery(['hotel', url], () => useFetch(url));
 
   if (isLoading) {
-    console.log("Loading...");
     return <div>Loading...</div>;
   }
 
 
   if (isError){
-    console.log("Error: ",error);
     return <div>Error...</div>;
   }
 
-   console.log('data hotels 0 :',data[0]);
   return (
     <div className="w-full max-w-5xl flex justify-between gap-7 z-10 ">
       {featuredHotels.map((hotels,key) => (
-        <div className="relative text-white rounded-xl overflow-hidden h-60 cursor-pointer bg-no-repeat bg-cover group ">
+        <div className="relative text-white rounded-xl overflow-hidden h-60 cursor-pointer bg-no-repeat bg-cover group " key={key}>
           <img src={hotels.src} alt="hotels" className="w-full object-cover group-hover:scale-110  transition duration-300 ease-in-out" />
           <div className="absolute bottom-5 left-5 z-10">
             <h1 className="text-left text-2xl font-semibold capitalize">{hotels.name}</h1>

@@ -34,8 +34,8 @@ const FuturedPropertiesData = [
 function FeaturedProperties() {
   return (
     <div className="w-full max-w-5xl flex justify-between gap-5">
-      {FuturedPropertiesData.map((items) => (
-        <div className="flex-1 gap-2 flex flex-col shadow-lg rounded-t-lg overflow-hidden relative">
+      {FuturedPropertiesData.map((items, key) => (
+        <div className="flex-1 gap-2 flex flex-col shadow-lg rounded-t-lg overflow-hidden relative" key={key}>
           <img src={items.src} alt="futured-Property" className="w-full h-60 object-cover" />
           <div className="flex-1 gap-2 flex flex-col text-left px-4 pb-4">
             <span className="font-bold">{items.title}</span>

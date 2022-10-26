@@ -3,7 +3,7 @@ import express from 'express';
 // controller
 import {
   getAllHotels, getByIdHotel, createHotel, updateHotel, deleteHotel, 
-  countByCity,
+  countByCity, countByType
 } from '../controllers/hotel.js';
 
 import { verifyAdmin } from '../utils/verifyToken.js';
@@ -24,6 +24,6 @@ router.delete('/:id', verifyAdmin, deleteHotel);
 
 
 router.get("/countByCity", countByCity);
-// router.get("/countByType", countByType);
+router.get("/countByType", countByType);
 
 export default router;
