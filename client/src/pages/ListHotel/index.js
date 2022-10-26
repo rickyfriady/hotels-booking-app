@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import { useLocation } from 'react-router-dom';
@@ -5,6 +6,8 @@ import { useState } from 'react';
 import { format } from 'date-fns';
 import { DateRange } from 'react-date-range';
 import { Header, SearchItem } from '../../components';
+import { useFetch } from '../../hooks/useFetch';
+import { useQuery } from '@tanstack/react-query';
 
 function ListHotel() {
   const location = useLocation();
@@ -12,7 +15,20 @@ function ListHotel() {
   const [date, setDate] = useState(location.state.date);
   const [openDate, setOpenDate] = useState(false);
   const [options] = useState(location.state.options);
+  const [min, setMin] = useState(undefined) ;
+  const [max, setMax] = useState(undefined) ;
 
+  const url = `http://localhost:8800/api/hotel?city=${destination}&min=${min || 0 }&max=${max || 999}`;
+  const { data,  isLoading } = useQuery(['listhotel', url], () => useFetch(url));
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+  
+  //refetching
+  const handleClick = () => {
+    useQuery(['listhotel', url], () => useFetch(url))
+  };
   return (
     <div>
       <Header tipe="list" />
@@ -95,15 +111,13 @@ function ListHotel() {
                 </div>
               </div>
             </div>
-            <button type="button" className="p-2 bg-heroSec text-iconNav border-none w-full font-medium cursor-pointer">Search</button>
+            <button type="button" className="p-2 bg-heroSec text-iconNav border-none w-full font-medium cursor-pointer" onClick={handleClick} >Search</button>
           </div>
 
           <div className="flex-[3_1_0%]">
-            <SearchItem />
-            <SearchItem />
-            <SearchItem />
-            <SearchItem />
-            <SearchItem />
+                {data.data.map((item) => (
+                  <SearchItem item={item} key={item._id} />
+                ))}
           </div>
         </div>
       </div>
